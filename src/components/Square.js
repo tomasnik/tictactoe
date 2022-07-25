@@ -1,6 +1,6 @@
-function Square() {
+function Square({onClick, value}) {
     return (
-        <button className={"square"}></button>
+        <button className={"square"} onClick={onClick}>{value}</button>
     );
 }
 

@@ -1,11 +1,12 @@
 import Square from "./Square";
 
-function Board() {
-    const squares = Array.from({length: 9}, (_, i) => <Square key={i}/>);
+function Board({squares, handleClick}) {
+    const squareElements = Array.from({length: 9}, (_, i) =>
+        <Square key={i} value={squares[i]} onClick={() => handleClick(i)} />);
 
     return (
         <div className={"board"}>
-            {squares}
+            {squareElements}
         </div>
     );
 }
